@@ -6,12 +6,12 @@ class twitter extends view {
     /*
      *@method indexView() - default content for the index route
      */
-    public function indexView(array $links = array()) {
+    public function indexView($links = array()) {
 
     }
     
     
-    public function tweetView (array $links = array()) {
+    public function tweetView ($links = array()) {
         
     }
     

@@ -11,13 +11,29 @@
 	</head>
 	
 	<body>
-		<form id='form-tweet' class='align-vertical'>
-			<label id='label-tweet' for='textarea-status'>Message:</label>
-			<textarea id='textarea-status' name='status' maxlength='130'></textarea>
-			<button type='submit' name='ac' value='tweet' >Tweet</button>
-		</form>
 		
-		<?php echo($html); ?>
+		<div id='div-twitter-toolbar'>
+			
+			<form id='form-tweet' class='align-vertical'>
+				<label id='label-tweet' for='textarea-status'>Message:</label>
+				<textarea id='textarea-status' name='status' maxlength='130'></textarea>
+				<button type='submit' name='ac' value='tweet' >Tweet</button>
+			</form>
+			
+			<ul id='ul-options'>
+				<li><a href='#'>View Profile</a></li>
+				<li><a href='#'>View My Tweets</a></li>
+				<li><a href='#'>View Timeline</a></li>
+				<li><a href='#'>View Followers</a></li>
+				
+			</ul>
+		</div>
+		<div id='div-content'>
+			
+			<?php echo($html); ?>
+			
+		</div>
+		
 		
 	</body>
 </html>

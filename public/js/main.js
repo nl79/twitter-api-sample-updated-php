@@ -17,7 +17,7 @@ function select(evt) {
         
     if (ajax.readyState==4 && ajax.status==200)
       {
-      document.getElementById("div-school-data").innerHTML=ajax.responseText;
+      document.getElementById("div-content").innerHTML=ajax.responseText;
       }
     }
 
@@ -27,7 +27,7 @@ function select(evt) {
 }
 
 function init() {
-    $('ul-school-list').setAttribute("onclick", 'select(event)');    
+    $('ul-options').setAttribute("onclick", 'select(event)');    
 }
 
 

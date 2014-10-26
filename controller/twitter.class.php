@@ -61,6 +61,8 @@ class twitter extends controller {
         $status = isset($_REQUEST['status']) && is_string($_REQUEST['status']) &&
                     !empty($_REQUEST['status']) ? $_REQUEST['status'] : null; 
          
+        $result = array(); 
+         
         if(!is_null($status)) {
         $url = 'https://api.twitter.com/1.1/statuses/update.json';
         $requestMethod = 'POST';
