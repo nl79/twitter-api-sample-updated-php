@@ -56,7 +56,7 @@ class twitter extends controller {
     }
     
     protected function tweetAction() {
-        
+         
         #extract the status from the request array.
         $status = isset($_REQUEST['status']) && is_string($_REQUEST['status']) &&
                     !empty($_REQUEST['status']) ? $_REQUEST['status'] : null; 
