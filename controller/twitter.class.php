@@ -48,15 +48,41 @@ class twitter extends controller {
     }
     
     protected function tweetsAction() {
+        echo('tweetAction'); 
         
-        $url = 'https://api.twitter.com/1.1/statuses/user_timeline.json'
-        $method = 'GET';
-        $getstring = '?screen_name=pamosn'; 
+        $url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
+        $requestMethod = 'GET';
+        $getfield = '?screen_name=pamosn';
+        
+        $twitter = new \library\TwitterAPIExchange($this->_settings);
+        
+        $result = $twitter->setGetfield($getfield)
+                     ->buildOauth($url, $requestMethod)
+                     ->performRequest(true);
+        
+        echo('<pre>');
+        var_dump($result);
+        echo('</pre>'); 
+        
+                     
         
     }
     
     protected function profileAction() {
         
+        $url = 'https://api.twitter.com/1.1/users/show.json';
+        $requestMethod = 'GET';
+        $getfield = '?screen_name=nl79';
+        
+        $twitter = new \library\TwitterAPIExchange($this->_settings);
+        
+        $result = $twitter->setGetfield($getfield)
+                     ->buildOauth($url, $requestMethod)
+                     ->performRequest();
+        
+        echo('<pre>');
+        var_dump($result);
+        echo('</pre>'); 
     }
     
     protected function tweetAction() {
@@ -70,11 +96,7 @@ class twitter extends controller {
     
     
     protected function followersAction() {
-        
-        $url = 'https://api.twitter.com/1.1/followers/list.json?cursor=-1&screen_name=sitestreams&skip_status=true&include_user_entities=false'
-        $requestMethod = 'GET';
-        
-        
+          
     }
     
     
