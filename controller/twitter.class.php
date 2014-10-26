@@ -15,21 +15,12 @@ class twitter extends controller {
         'consumer_secret' => "gidZTOAjCWmZwgQgfFUnrkNMddS068148Q4cXerAmbIN4hd3aU"
     );
     
-    
-    
     protected function indexAction () {
-        
-        /*
-        #view object data array. 
-        $vData = array('list' => $schoolList); 
-              
-        $view = new \view\index($this->_action, $vData);
-        */
-        
+         
+        $view = new \view\twitter($this->_action, array());
     }
       
     protected function tweetsAction() {
-        echo('tweetAction'); 
         
         $url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
         $requestMethod = 'GET';
@@ -39,10 +30,9 @@ class twitter extends controller {
        
         $result = json_decode($twitter->setGetfield($getfield)
                      ->buildOauth($url, $requestMethod)
-                     ->performRequest(true), true); 
-        echo('<pre>');
-        var_dump($result);
-        echo('</pre>'); 
+                     ->performRequest(true), true);
+        
+        $view = new \view\twitter($this->_action, $result); 
         
     }
     
@@ -61,33 +51,31 @@ class twitter extends controller {
         $result = json_decode($twitter->setGetfield($getfield)
                      ->buildOauth($url, $requestMethod)
                      ->performRequest(true), true); 
-        echo('<pre>');
-        var_dump($result);
-        echo('</pre>');  
+        
+        $view = new \view\twitter($this->_action, $result);  
     }
     
     protected function tweetAction() {
         
         #extract the status from the request array.
         $status = isset($_REQUEST['status']) && is_string($_REQUEST['status']) &&
-                    !empty($_REQUEST['status']); 
-        
-         /** URL for REST request, see: https://dev.twitter.com/docs/api/1.1/ **/
+                    !empty($_REQUEST['status']) ? $_REQUEST['status'] : null; 
+         
+        if(!is_null($status)) {
         $url = 'https://api.twitter.com/1.1/statuses/update.json';
         $requestMethod = 'POST';
         
-        /** POST fields required by the URL above. See relevant docs as above **/
         $postfields = array('status'=> $status); 
         
-        /** Perform a POST request and get the response **/
         $twitter = new \library\TwitterAPIExchange($this->_settings);
        
         $result = json_decode($twitter->setPostfields($postfields)
                      ->buildOauth($url, $requestMethod)
                      ->performRequest(true), true); 
-        echo('<pre>');
-        var_dump($result);
-        echo('</pre>');
+        
+        }
+       
+        $view = new \view\twitter($this->_action, $result);
     }
     
     protected function timelineAction() {
@@ -102,9 +90,8 @@ class twitter extends controller {
         $result = json_decode($twitter->setGetfield($getfield)
                      ->buildOauth($url, $requestMethod)
                      ->performRequest(true), true); 
-        echo('<pre>');
-        var_dump($result);
-        echo('</pre>');
+        
+        $view = new \view\twitter($this->_action, $result);
     }
     
     protected function followersAction() {
@@ -120,9 +107,7 @@ class twitter extends controller {
                      ->buildOauth($url, $requestMethod)
                      ->performRequest(true), true);
         
-        echo('<pre>');
-        var_dump($result);
-        echo('</pre>'); 
+        $view = new \view\twitter($this->_action, $result); 
     }
     
     protected function followersidsAction() {
@@ -133,8 +118,10 @@ class twitter extends controller {
         $getfield = '?screen_name=J7mbo';
         $requestMethod = 'GET';
         $twitter = new TwitterAPIExchange($settings);
-        echo $twitter->setGetfield($getfield)
+         $result = json_decode($twitter->setGetfield($getfield)
                      ->buildOauth($url, $requestMethod)
-                     ->performRequest();
+                     ->performRequest(true), true);
+        
+        $view = new \view\twitter($this->_action, $result); 
     }
 }

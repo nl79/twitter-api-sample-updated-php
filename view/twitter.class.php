@@ -1,16 +1,18 @@
 <?php
 namespace view;
 
-class index extends view {
+class twitter extends view {
     
     /*
      *@method indexView() - default content for the index route
      */
-    public function indexView($data) {
-             
-        $this->_output .= $this->buildUL($data['list']);
-        $this->_output .= "<div id='div-school-data'></div>";
-      
+    public function indexView(array $links = array()) {
+
+    }
+    
+    
+    public function tweetView (array $links = array()) {
+        
     }
     
     /*

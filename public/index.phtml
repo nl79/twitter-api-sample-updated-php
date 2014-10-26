@@ -2,13 +2,20 @@
 
 <html lang="en">
 	<head>
-		<title>IS218 Programming Challenge 1</title>
+		<title>IS218 Programming Challenge 2</title>
 		
 		<link rel='stylesheet' type='text/css' href='./public/styles/main.css' />
 		<script type='text/javascript' src='./public/js/main.js'></script>
+		
+		<link rel='stylesheet' type='text/css' href='./public/styles/twitter.css' />
 	</head>
 	
 	<body>
+		<form id='form-tweet' class='align-vertical'>
+			<label id='label-tweet' for='textarea-status'>Message:</label>
+			<textarea id='textarea-status' name='status' maxlength='130'></textarea>
+			<button type='submit' name='ac' value='tweet' >Tweet</button>
+		</form>
 		
 		<?php echo($html); ?>
 		
