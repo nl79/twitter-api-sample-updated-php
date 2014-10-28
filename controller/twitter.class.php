@@ -81,7 +81,6 @@ class twitter extends controller {
     }
     
     protected function timelineAction() {
-        echo('timelineAction'); 
         
         $url = 'https://api.twitter.com/1.1/statuses/home_timeline.json';
         $requestMethod = 'GET';
@@ -97,7 +96,6 @@ class twitter extends controller {
     }
     
     protected function followersAction() {
-         echo('followersAction'); 
         
         $url = 'https://api.twitter.com/1.1/followers/list.json';
         $requestMethod = 'GET';

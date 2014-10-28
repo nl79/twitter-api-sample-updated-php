@@ -16,34 +16,18 @@ class twitter extends view {
     }
     
     public function profileView ($data = array()) {
-        echo("profile"); 
+        var_dump($data); 
     }
     
     public function tweetsView ($data = array()) {
-        echo("tweets"); 
+        var_dump($data); 
     }
     
     public function followersView ($data = array()) {
-        echo("followers"); 
+        var_dump($data); 
     }
     
     public function timelineView ($data = array()) {
-        echo("timeline"); 
-    }
-    
-    
-    /*
-     *@method infoView() - html for the info action.
-     */
-    public function infoView($data) {
-        
-        if(isset($data['record']) && is_array($data['record'])) {
-            
-            
-            $this->_output .= \library\html::table(array('id'=>'table-school-data',
-                                           'border' => '1',
-                                           'data' => $data['record']), true, true);
-        }
-        
-    }   
+        var_dump($data);
+    }  
 }
