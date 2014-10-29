@@ -24,7 +24,7 @@ class twitter extends controller {
         
         $url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
         $requestMethod = 'GET';
-        $getfield = '?screen_name=pamosn';
+        $getfield = '?screen_name=pamosn&trim_user=false&exclude_replies=true&contributor_details=false&include_rts=false';
         
         $twitter = new \library\TwitterAPIExchange($this->_settings);
        
@@ -56,7 +56,7 @@ class twitter extends controller {
     }
     
     protected function tweetAction() {
-         
+          
         #extract the status from the request array.
         $status = isset($_REQUEST['status']) && is_string($_REQUEST['status']) &&
                     !empty($_REQUEST['status']) ? $_REQUEST['status'] : null; 
@@ -84,7 +84,7 @@ class twitter extends controller {
         
         $url = 'https://api.twitter.com/1.1/statuses/home_timeline.json';
         $requestMethod = 'GET';
-        $getfield = '?screen_name=pamosn';
+        $getfield = '?screen_name=pamosn&trim_user=true&exclude_replies=true&contributor_details=false&include_entities=false';
         
         $twitter = new \library\TwitterAPIExchange($this->_settings);
        
@@ -99,7 +99,7 @@ class twitter extends controller {
         
         $url = 'https://api.twitter.com/1.1/followers/list.json';
         $requestMethod = 'GET';
-        $getfield = '?screen_name=pamosn';
+        $getfield = '?screen_name=pamosn&include_user_entities=false&skip_status=true';
         
         $twitter = new \library\TwitterAPIExchange($this->_settings);
        
