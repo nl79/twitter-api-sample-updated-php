@@ -24,7 +24,7 @@ class twitter extends controller {
         
         $url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
         $requestMethod = 'GET';
-        $getfield = '?screen_name=pamosn';
+        $getfield = '?screen_name=pamosn&trim_user=false&exclude_replies=true&contributor_details=false&include_rts=false';
         
         $twitter = new \library\TwitterAPIExchange($this->_settings);
        
