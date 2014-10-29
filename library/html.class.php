@@ -58,7 +58,12 @@ class html {
                 if(is_array($row)){
                     
                     foreach($row as $key => $value) {
-                        $html .= '<td>' . $value . '</td>'; 
+                        
+                        $html .= '<td>'; 
+                       
+                        $html .= !is_scalar($value) ? '&nbsp;' : $value; 
+                            
+                        $html .= '</td>'; 
                     }
                 }
                 
@@ -89,6 +94,13 @@ class html {
                 if(is_array($row)) {
                     
                     foreach($row as $key => $value) {
+                        
+                        if(!is_scalar($value)) {
+                           $vTable[$key][] = '&nbsp;'; 
+                            
+                            continue; 
+                        }
+                        
                         $vTable[$key][] = $value; 
                     }
                     
