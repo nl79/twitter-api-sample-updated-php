@@ -7,7 +7,13 @@ abstract class view {
     protected $_action = '';
     
     #output string
-    protected $_output = ""; 
+    protected $_output = "";
+    
+    #stylessheets
+    protected $_stylesheets = "";
+    
+    #javascript files
+    protected $_scripts = ""; 
     
     public function __construct($action, $data) {
         
@@ -44,6 +50,10 @@ abstract class view {
         #include the template file. 
         include('./public/index.phtml');
         
+    }
+    
+    private function menu() {
+     
     }
     
     

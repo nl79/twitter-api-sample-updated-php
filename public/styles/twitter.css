@@ -17,11 +17,11 @@
     height: 80px; 
 }
 
-#ul-options {
+#ul-links {
     padding: 10px; 
 }
 
-#ul-options li {
+#ul-links li {
     display: block;
     list-style-type: none;
     float: left;

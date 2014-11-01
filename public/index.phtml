@@ -11,29 +11,16 @@
 	</head>
 	
 	<body>
-		
-		<div id='div-twitter-toolbar'>
+		<div id='div-main-menu'>
 			
-			<form id='form-tweet' class='align-vertical' method='post' action='http://web.njit.edu/~nl79/is218/is218proj3/'>
- 				<label id='label-tweet' for='textarea-status'>Message:</label>
-				<textarea id='textarea-status' name='status' maxlength='130'></textarea>
-				<button type='submit' name='ac' value='tweet' >Tweet</button>
-			</form>
-			
-			<ul id='ul-options'>
-				<li><a href='./?ac=profile'>View Profile</a></li>
-				<li><a href='./?ac=tweets'>View My Tweets</a></li>
-				<li><a href='./?ac=timeline'>View Timeline</a></li>
-				<li><a href='./?ac=followers'>View Followers</a></li>
-				
+			<ul id='ul-main-menu'>
+				<li><a href='./?page=index'>School Info</a></li>
+				<li><a href='./?page=twitter'>Twitter API</a></li>
 			</ul>
-		</div>
-		<div id='div-content'>
-			
-			<?php echo($html); ?>
-			
+			<div class='div-clear-both'></div>
 		</div>
 		
-		
+		<?php echo($html); ?>
+			
 	</body>
 </html>

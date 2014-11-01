@@ -9,7 +9,11 @@ class index extends view {
     public function indexView($data) {
              
         $this->_output .= $this->buildUL($data['list']);
-        $this->_output .= "<div id='div-school-data'></div>";
+        $this->_output .= "
+        <div id='div-school-data'>
+            <div id='div-content'></div>
+        </div>
+        ";
       
     }
     
@@ -38,7 +42,7 @@ class index extends view {
                 
                 $html .= "<div id='div-school-list'>
                             <h1>School List</h1>    
-                            <ul id='ul-school-list'>"; 
+                            <ul id='ul-links'>"; 
                 
                 #count used to index each record for faster look up.
                 $index = 0; 
@@ -49,7 +53,9 @@ class index extends view {
                         $a = \library\html::a(array('href' => "./?UNITID=" . $row['UNITID'] . '&ac=info',
                                               'data' => $row['INSTNM']));
                                               */
-                        $a = \library\html::a(array('href' => "./?UNITID=" . $row['UNITID'] . '&ac=info&id=' . $index,
+                        $a = \library\html::a(array('href' => "./?UNITID=" .$row['UNITID'] .
+                                                    '&ac=info&id=' . $index .
+                                                    '&page=index',
                                               'data' => $row['INSTNM']));
                         
                         #increment index

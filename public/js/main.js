@@ -27,7 +27,7 @@ function select(evt) {
 }
 
 function init() {
-    $('ul-options').setAttribute("onclick", 'select(event)');    
+    $('ul-links').setAttribute("onclick", 'select(event)');    
 }
 
 

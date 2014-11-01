@@ -2,6 +2,12 @@ body {
     padding: 20px; 
 }
 
+#ul-main-menu li {
+    display: block;
+    float: left;
+    margin: 15px; 
+}
+
 #div-school-list {
     max-height: 500px;
     width: 35%; 
@@ -23,4 +29,9 @@ table#table-school-data {
 table#table-school-data td {
     padding: 5px;
     
+}
+
+
+.div-clear-both {
+    clear: both; 
 }
