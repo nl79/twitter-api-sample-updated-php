@@ -15,7 +15,7 @@ class twitter extends view {
                         
                         <label id='label-tweet' for='textarea-status'>Message:</label>
                         <textarea id='textarea-status' name='status' maxlength='130'></textarea>
-                        <button type='submit' name='ac' value='tweet' >Tweet</button>
+                        <button id='button-tweet' type='submit' name='ac' value='tweet' >Tweet</button>
                 </form>
                 
                 <ul id='ul-links'>

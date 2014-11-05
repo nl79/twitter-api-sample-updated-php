@@ -2,10 +2,18 @@ body {
     padding: 20px; 
 }
 
+#div-main-menu {
+    border: 1px solid black;
+    margin-bottom: 15px; 
+}
 #ul-main-menu li {
     display: block;
     float: left;
     margin: 15px; 
+}
+
+#ul-main-menu li a:hover {
+    color: orange; 
 }
 
 #div-school-list {
