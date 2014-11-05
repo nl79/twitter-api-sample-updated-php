@@ -26,6 +26,7 @@ class twitter extends view {
                         
                 </ul>
         </div>
+	<div id='div-content'></div>
         
         "; 
 
